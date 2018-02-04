@@ -1,0 +1,56 @@
+1.这一节首先我们将dist里面的文件全部删除
+2.src里面html文件也删除 这时候 我们启动服务 进行打包
+ 使用cnpm install  进行打包安装依赖
+3. 使用 npm run dev 编译成功 在dist 文件目录下面出现mian.js
+4.我们如果想要运行这个程序需要进行 新建html 然后引入
+  相应的编译之后的main.html 这种没有什么技术含量工作
+  就交给 相应的程序来做就好了;
+  webpack就能做这样一些事情，在它打包的过程中就能做这样的
+  一些事情;
+5.引入一个插件帮助我们 创建index.html 文件
+6.安装插件 html-webpack-plugin 安装完成之后
+  在webpack.config.js 里面进行相应的配置
+
+7这节课我们先认识一下webpack中额loader
+ loader就是webpack用来预处理模块的
+ 在一个模块引入之前会预先使用loader处理模块的内容
+
+8.本节课我们需要进行相应的react的代码
+  这时候 我们需要额外的安装其他的依赖;
+  这时候 我们安装的依赖 cnpm i -S react react-dom  
+9.
+import React from 'react'; // 引入相应的模块
+import ReactDom from 'react-dom'; // 引入相应的依赖模块
+
+ReactDom.render( 
+    <div>React</div>,
+    document.getElementById('root')
+);
+写完这些代码之后  进行编译打包,相应的
+会报错因为 这里的react y语法  浏览器是不怎么
+认识的 因此我们需要安装相应的loader 来帮助我们处理这种语法
+
+10 我们想要解析相应的jsx的语法我们需要安装相应的插件
+   cnpm i -D babel-loader babel-core
+   然后我们在webpack-config.js 里面配置相应的文件;
+   就可以了
+
+11 我们学习一下 dev-server 这是webpack自带的服务器的内容
+从之后我们的项目将跑在服务器上面，我们通过发送请求来访问内容;
+方便我们额开发调试 同时也是为我们的模拟更加真实的
+开发环境
+
+12 安装 依赖  cnpm i -D webpack-dev-server
+13 执行相应的命令,启动相应的服务,
+   webpack 和传统的静态服务器有些不同的是
+   他先是将我们指定的文件进行打包 然后再进行
+   启动服务,老师讲的时候安装完成依赖直接执行的时候
+   报错了 原因是老师改变了webpack 的配置文件的
+   名称 因此在使用的时候做了相应的改动 我这里没有做相应的
+   改动所以成功的编译了;
+
+
+  
+
+
+  
